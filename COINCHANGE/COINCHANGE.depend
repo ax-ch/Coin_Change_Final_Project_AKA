@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1767241223 source:c:\c++\tubes aka\coinchange\coin.cpp
+	"coin.h"
+	<vector>
+
+1767241115 c:\c++\tubes aka\coinchange\coin.h
+	<vector>
+
+1767241555 source:c:\c++\tubes aka\coinchange\main.cpp
+	<iostream>
+	<vector>
+	<chrono>
+	"coin.h"
+
