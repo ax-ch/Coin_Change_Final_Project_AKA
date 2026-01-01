@@ -1,32 +1,37 @@
 # 🪙 Coin Change Problem: Iterative vs. Recursive 🪙
 
-This project explores the **Coin Change Problem** by comparing two classic algorithmic strategies. We analyze the performance gap between an intuitive recursive approach and an optimized iterative dynamic programming approach.
+A C++ project comparing **Iterative** vs. **Recursive** algorithm methods to solve the classic Coin Change Problem.
 
-## 🚀 Overview
-The goal is to find the total number of unique ways to make change for a target sum using a specific set of euro coin denominations: `{1, 2, 5, 10, 20, 50}`.
+## 📖 Problem Description
+The goal is to determine the total number of unique ways to make change for a target sum using the euro set of coin denominations: `{1, 2, 5, 10, 20, 50}`. This project demonstrates how different algorithmic paradigms handle the "state-space explosion" as the target sum grows.
 
-### The Algorithms
-1.  **Top-Down Recursion**: A direct, "divide and conquer" approach. It is easy to implement but suffers from redundant calculations, resulting in **Exponential Time Complexity $O(2^n)$**.
-2.  **Bottom-Up Iterative (DP)**: Uses **Tabulation** to store solutions to subproblems in a 2D table. This avoids repeated work, achieving **Polynomial Time Complexity $O(n \cdot S)$**.
+## 🛠️ Algorithm Logic
 
-## 🛠️ Project Structure
-The project is built using a modular **Abstract Data Type (ADT)** approach:
-* `coin.h`: Function declarations and header guards.
-* `coin.cpp`: Implementation of the calculation logic.
-* `main.cpp`: Driver file for user input and `<chrono>` benchmarking.
+### 1. Recursive Method (Top-Down)
+* **Concept**: Uses a "divide and conquer" strategy. At each step, it branches into two choices: including the current coin or skipping to the next.
+* **Complexity**: $O(2^n)$ (Exponential).
+* **Behavior**: It does not store results, meaning it recalculates the same sub-sums thousands of times. It is fast for tiny sums but becomes unstable as the sum increases.
 
-## 📊 Performance Comparison
-Benchmark results reveal a significant efficiency gap as the target sum increases:
+### 2. Iterative Method (Bottom-Up)
+* **Concept**: Implements **Dynamic Programming (Tabulation)**. It solves for small amounts first (0, 1, 2...) and stores them in a 2D table.
+* **Complexity**: $O(n \cdot S)$ (Polynomial), where $n$ is the number of coins and $S$ is the sum.
+* **Behavior**: By looking up previously solved subproblems in the table, it avoids all redundant work, making it the superior choice for large-scale inputs.
 
-| Target Sum | Iterative Time (μs) | Recursive Time (μs) | Observation |
-| :--- | :--- | :--- | :--- |
-| **10** | ~10 | ~1 | Recursion is faster (low overhead) |
-| **100** | ~30 | ~5,000 | DP starts to pull ahead |
-| **500** | ~50 | ~15,000,000 | Recursion shows massive lag |
-| **1000** | ~100 | *Timeout/Hang* | DP is the clear winner |
+## 🚀 Benchmarking Guide
+Use these values to observe the efficiency gap in the console:
 
-## 📝 Conclusion
-The project demonstrates that while recursion is mathematically elegant for small inputs, **Dynamic Programming** is essential for scalability. By using a DP table, we transform a computationally "expensive" problem into a highly efficient one.
+| Target Sum | Logic Observation |
+| :--- | :--- |
+| **5 - 20** | Recursive is fast due to low overhead. |
+| **40 - 100** | Iterative becomes faster than Recursive. |
+| **500** | Recursive shows significant lag. |
+| **1000** | Iterative is instant; Recursive may hang/timeout. |
+
+## 📦 Project Structure
+The project uses a modular **ADT (Abstract Data Type)** approach:
+* `coin.h`: Function prototypes and standard library includes.
+* `coin.cpp`: The calculation logic for both algorithms.
+* `main.cpp`: The driver file that handles user input and timing via `<chrono>`.
 
  
 **Language:** C++  
