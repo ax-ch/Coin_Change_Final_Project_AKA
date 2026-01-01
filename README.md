@@ -1,11 +1,12 @@
 # 🪙 Coin Change Problem: Iterative vs. Recursive 🪙
 
-A C++ project comparing **Iterative** vs. **Recursive** algorithm methods to solve the classic Coin Change Problem.
+**Language:** C++  
+**Report Topic:** Comparative Analysis of Iterative and Recursive Algorithms for the Coin Change Problem
 
-## 📖 Problem Description
+## Problem Description
 The goal is to determine the total number of unique ways to make change for a target sum using the euro set of coin denominations: `{1, 2, 5, 10, 20, 50}`. This project demonstrates how different algorithmic paradigms handle the "state-space explosion" as the target sum grows.
 
-## 🛠️ Algorithm Logic
+## Algorithm Logic
 
 ### 1. Recursive Method (Top-Down)
 * **Concept**: Uses a "divide and conquer" strategy. At each step, it branches into two choices: including the current coin or skipping to the next.
@@ -17,7 +18,7 @@ The goal is to determine the total number of unique ways to make change for a ta
 * **Complexity**: $O(n \cdot S)$ (Polynomial), where $n$ is the number of coins and $S$ is the sum.
 * **Behavior**: By looking up previously solved subproblems in the table, it avoids all redundant work, making it the superior choice for large-scale inputs.
 
-## 🚀 Benchmarking Guide
+## Benchmarking Guide
 Use these values to observe the efficiency gap in the console:
 
 | Target Sum | Logic Observation |
@@ -27,12 +28,8 @@ Use these values to observe the efficiency gap in the console:
 | **500** | Recursive shows significant lag. |
 | **1000** | Iterative is instant; Recursive may hang/timeout. |
 
-## 📦 Project Structure
+## Project Structure
 The project uses a modular **ADT (Abstract Data Type)** approach:
 * `coin.h`: Function prototypes and standard library includes.
 * `coin.cpp`: The calculation logic for both algorithms.
 * `main.cpp`: The driver file that handles user input and timing via `<chrono>`.
-
- 
-**Language:** C++  
-**Report Topic:** Comparative Analysis of Iterative and Recursive Algorithms for the Coin Change Problem 
