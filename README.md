@@ -1,7 +1,6 @@
 # Coin Change Problem: Iterative vs. Recursive
 
 **Report Title:** Comparative Analysis of Iterative and Recursive Algorithms for the Coin Change Problem
-
 **Language:** C++
 
 ## Problem Description
