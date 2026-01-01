@@ -1,7 +1,7 @@
 # 🪙 Coin Change Problem: Iterative vs. Recursive 🪙
 
+**Report Title:** Comparative Analysis of Iterative and Recursive Algorithms for the Coin Change Problem
 **Language:** C++  
-**Report Topic:** Comparative Analysis of Iterative and Recursive Algorithms for the Coin Change Problem
 
 ## Problem Description
 The goal is to determine the total number of unique ways to make change for a target sum using the euro set of coin denominations: `{1, 2, 5, 10, 20, 50}`. This project demonstrates how different algorithmic paradigms handle the "state-space explosion" as the target sum grows.
