@@ -11,7 +11,7 @@ The goal is to determine the total number of unique ways to make change for a ta
 
 ### 1. Recursive Method (Top-Down)
 * **Concept**: Uses a "divide and conquer" strategy. At each step, it branches into two choices: including the current coin or skipping to the next.
-* **Complexity**: $O(2^n)$ (Exponential).
+* **Complexity**: $O(2^S)$ (Exponential).
 * **Behavior**: It does not store results, meaning it recalculates the same sub-sums thousands of times. It is fast for tiny sums but becomes unstable as the sum increases.
 
 ### 2. Iterative Method (Bottom-Up)
